@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jdeferred:jdeferred-android-aar:1.2.3'
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

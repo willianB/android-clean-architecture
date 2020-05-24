@@ -21,15 +21,14 @@ import com.pragma.domain.Product;
 import com.pragma.eshop.R;
 import com.pragma.eshop.databinding.MainFragmentBinding;
 
+import dataSource.ProductServerSource;
+import repository.ProductRepository;
+
 public class MainFragment extends Fragment {
 
     //refs
     private MainViewModel mViewModel;
     private MainFragmentBinding mainFragmentBinding;
-
-    //views
-    private TextView messageTextView;
-    private Button goButton;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -54,6 +53,8 @@ public class MainFragment extends Fragment {
         mainFragmentBinding.goButton.setOnClickListener(v -> {
             mViewModel.loadProduct();
         });
+
+
 
         initObservers();
     }

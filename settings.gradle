@@ -1,3 +1,5 @@
 rootProject.name='Eshop'
 include ':app'
 include ':domain'
+include ':data'
+include ':usecase'

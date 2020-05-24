@@ -5,10 +5,19 @@ import androidx.lifecycle.ViewModel;
 
 import com.pragma.domain.Product;
 
+import dataSource.ProductServerSource;
+import repository.ProductRepository;
+
 public class MainViewModel extends ViewModel {
 
     protected MutableLiveData<Product> productLiveData = new MutableLiveData<>();
 
+    public MainViewModel() {
+        ProductRepository productRepository = new ProductRepository(new ProductServerSource());
+        productRepository.getAllProducts().done(products -> {
+
+        });
+    }
 
     public void loadProduct(){
 
